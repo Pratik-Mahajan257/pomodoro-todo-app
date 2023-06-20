@@ -18,11 +18,11 @@ const TodoForm = ({ onAddTask }) => {
         value={task}
         onChange={(e) => setTask(e.target.value)}
         placeholder="Add a task"
-        className="border border-gray-300 rounded px-4 py-2 mr-2"
+        className="border border-gray-300 rounded-lg px-4 w-[350px] py-2 mr-2"
       />
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-600 text-white rounded px-4 py-2"
+        className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2"
       >
         Add Task
       </button>
