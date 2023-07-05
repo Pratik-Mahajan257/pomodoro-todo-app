@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { AiOutlinePlus } from 'react-icons/ai'
 const TodoForm = ({ onAddTask }) => {
   const [task, setTask] = useState('');
 
@@ -12,21 +12,24 @@ const TodoForm = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className='bg-yellow-100 rounded-lg flex justify-center items-center '>
+
+    <form onSubmit={handleSubmit} className='flex justify-center items-center'>
       <input
         type="text"
         value={task}
         onChange={(e) => setTask(e.target.value)}
         placeholder="Add a task"
-        className="border border-gray-300 rounded-lg px-4 w-[350px] py-2 mr-2"
+        className="border outline-none border-gray-300 bg-transparent border-none rounded-lg px-4 w-[350px] h-24  py-2 "
       />
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2"
+        className="text-white rounded-lg px-5 py-8   "
       >
-        Add Task
+        <AiOutlinePlus size={40} className='text-orange-500 text-4xl font-bold '/>
       </button>
     </form>
+    </div>
   );
 };
 

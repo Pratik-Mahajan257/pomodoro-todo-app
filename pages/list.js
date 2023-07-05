@@ -2,7 +2,8 @@ import { useState } from 'react';
 import TodoForm from '../components/TodoForm';
 import TodoList from '../components/TodoList';
 import Layout from '../components/Layout';
-const list = () => {
+
+const List = () => {
   const [tasks, setTasks] = useState([]);
 
   const handleAddTask = (newTask) => {
@@ -14,11 +15,15 @@ const list = () => {
     updatedTasks.splice(index, 1);
     setTasks(updatedTasks);
   };
+
+  const taskCount = tasks.length; // Get the count of tasks
+
   return (
-    
-    <div className='flex flex-col justify-start items-center bg-yellow-600 h-screen'>
-      {/* Your notifications component content goes here */}
-     <h1 className="text-2xl font-bold mb-4 bg-yellow-200 p-3 mt-10 rounded-xl ">Todo App</h1>
+    <div className="flex flex-col justify-start items-center bg-yellow-300 h-screen">
+      {/* Display the task count instead of "Todo App" */}
+      <h1 className="text-2xl font-bold mb-4 bg-yellow-100 p-3 mt-10 rounded-xl">
+        {taskCount} {taskCount === 1 ? 'Task' : 'Tasks'} Addedd
+      </h1>
       <TodoForm onAddTask={handleAddTask} />
       <TodoList tasks={tasks} onDeleteTask={handleDeleteTask} />
       <Layout />
@@ -26,4 +31,4 @@ const list = () => {
   );
 };
 
-export default list;
+export default List;
